@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "166460602773",
+    "project_id": "mobilelanjut-4f837",
+    "storage_bucket": "mobilelanjut-4f837.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:166460602773:android:515c28d94f5e84e6869e9c",
+        "android_client_info": {
+          "package_name": "com.example.firebasematerial"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAah3eJT8fBQHuf9Mzd8FeO4wzQ8zvPzxA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
