@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebasematerial/controller/contact_controller.dart';
 import 'package:firebasematerial/model/contact_model.dart';
 import 'package:firebasematerial/view/contact.dart';
@@ -11,7 +12,9 @@ class AddContact extends StatefulWidget {
 }
 
 class _AddContactState extends State<AddContact> {
-  var contactController = ContactController();
+  // Add code CollectionReference
+  var contactController = ContactController(
+      FirebaseFirestore.instance.collection('contacts'));
   final formKey = GlobalKey<FormState>();
   String? name;
   String? phone;

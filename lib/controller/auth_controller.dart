@@ -3,9 +3,15 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebasematerial/model/user_model.dart';
 
 class AuthController {
-  final FirebaseAuth auth = FirebaseAuth.instance;
-  final CollectionReference userCollection = FirebaseFirestore.instance
-      .collection('users'); //untuk menyimpan di firebase collection
+  // Comment code berikut untuk disconnect Collection 'users' ke Firebase DB
+  // final FirebaseAuth auth = FirebaseAuth.instance;
+  // final CollectionReference userCollection = FirebaseFirestore.instance
+  //     .collection('users'); //untuk menyimpan di firebase collection
+
+  // Add code Firebase Auth dan CollectionReference
+  final FirebaseAuth auth;
+  final CollectionReference userCollection;
+  AuthController(this.auth, this.userCollection);
 
   bool get success => false;
 
@@ -29,7 +35,7 @@ class AuthController {
         return currentUser;
       }
     } catch (e) {
-      print('Error signing in: $e');
+      // print('Error signing in: $e');
     }
 
     return null;

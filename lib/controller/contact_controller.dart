@@ -6,8 +6,14 @@ import 'package:firebasematerial/model/contact_model.dart';
 
 class ContactController {
   //global agar mengakses semua method dan properti
-  final contactCollection = FirebaseFirestore.instance
-      .collection('contacts'); //contacts adalah nama collection di firestore
+
+  // Comment code berikut untuk disconnect Collection 'contacts' ke Firebase DB
+  // final contactCollection = FirebaseFirestore.instance
+  //     .collection('contacts'); //contacts adalah nama collection di firestore
+
+  // Add code CollectionReference
+  final CollectionReference contactCollection;
+  ContactController(this.contactCollection);
 
   final StreamController<List<DocumentSnapshot>> streamController =
       StreamController<List<DocumentSnapshot>>.broadcast();
@@ -57,7 +63,7 @@ class ContactController {
         await contactCollection.doc(docId).get(); //untuk mendapat doc. id
     //mengecek apakah document id ada atau tidak / error
     if (documentSnapshot.exists) {
-      print('Contact with ID $docId does not exists');
+      // print('Contact with ID $docId does not exists');
       return;
     }
 
@@ -72,6 +78,6 @@ class ContactController {
     await contactCollection.doc(id).delete();
     await getContact();
 
-    print('Delete contact with ID: $id');
+    // print('Delete contact with ID: $id');
   }
 }

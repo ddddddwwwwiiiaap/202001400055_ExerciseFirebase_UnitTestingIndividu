@@ -19,7 +19,9 @@ class UpdateContact extends StatefulWidget {
 }
 
 class _UpdateContactState extends State<UpdateContact> {
-  var contactController = ContactController();
+  // Add code CollectionReference
+  var contactController =
+      ContactController(FirebaseFirestore.instance.collection('contacts'));
   final formKey = GlobalKey<FormState>();
   String? name;
   String? phone;
@@ -79,7 +81,7 @@ class _UpdateContactState extends State<UpdateContact> {
                             decoration: const InputDecoration(
                               labelText: 'Name',
                             ),
-                            validator:(value) {
+                            validator: (value) {
                               if (value!.isEmpty) {
                                 return 'Please enter name';
                               }
@@ -94,7 +96,7 @@ class _UpdateContactState extends State<UpdateContact> {
                             decoration: const InputDecoration(
                               labelText: 'Phone',
                             ),
-                            validator:(value) {
+                            validator: (value) {
                               if (value!.isEmpty) {
                                 return 'Please enter phone number';
                               }
@@ -109,7 +111,7 @@ class _UpdateContactState extends State<UpdateContact> {
                             decoration: const InputDecoration(
                               labelText: 'Email',
                             ),
-                            validator:(value) {
+                            validator: (value) {
                               if (value!.isEmpty) {
                                 return 'Please enter email';
                               }
@@ -124,7 +126,7 @@ class _UpdateContactState extends State<UpdateContact> {
                             decoration: const InputDecoration(
                               labelText: 'Address',
                             ),
-                            validator:(value) {
+                            validator: (value) {
                               if (value!.isEmpty) {
                                 return 'Please enter address';
                               }
@@ -144,7 +146,8 @@ class _UpdateContactState extends State<UpdateContact> {
                                   name: name ?? widget.contactModel.name,
                                   phone: phone ?? widget.contactModel.phone,
                                   email: email ?? widget.contactModel.email,
-                                  address: address ?? widget.contactModel.address,
+                                  address:
+                                      address ?? widget.contactModel.address,
                                 );
                                 contactController.updateContact(cm);
                                 ScaffoldMessenger.of(context).showSnackBar(

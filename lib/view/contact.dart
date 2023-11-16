@@ -13,7 +13,10 @@ class Contact extends StatefulWidget {
 }
 
 class _ContactState extends State<Contact> {
-  var cc = ContactController();
+  // Add code CollectionReference
+  var cc = ContactController(
+      FirebaseFirestore.instance.collection('contacts')
+  );
 
   @override
   void initState() {

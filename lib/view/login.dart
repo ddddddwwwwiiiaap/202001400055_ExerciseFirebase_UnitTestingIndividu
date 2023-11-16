@@ -1,3 +1,5 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebasematerial/controller/auth_controller.dart';
 import 'package:firebasematerial/model/user_model.dart';
 import 'package:firebasematerial/view/contact.dart';
@@ -16,7 +18,9 @@ class Login extends StatefulWidget {
 class _LoginState extends State<Login> {
   bool _isObsure = true;
   final formkey = GlobalKey<FormState>();
-  final authCtr = AuthController();
+  // Add code Firebase Auth dan CollectionReference
+  final authCtr = AuthController(
+      FirebaseAuth.instance, FirebaseFirestore.instance.collection('users'));
   String? email;
   String? password;
 
