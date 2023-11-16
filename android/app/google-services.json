@@ -1,13 +1,13 @@
 {
   "project_info": {
-    "project_number": "166460602773",
-    "project_id": "mobilelanjut-4f837",
-    "storage_bucket": "mobilelanjut-4f837.appspot.com"
+    "project_number": "352202031323",
+    "project_id": "exercisefirebase-f56fa",
+    "storage_bucket": "exercisefirebase-f56fa.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:166460602773:android:515c28d94f5e84e6869e9c",
+        "mobilesdk_app_id": "1:352202031323:android:04b37bc6424cf94b93ccfe",
         "android_client_info": {
           "package_name": "com.example.firebasematerial"
         }
@@ -15,7 +15,7 @@
       "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyAah3eJT8fBQHuf9Mzd8FeO4wzQ8zvPzxA"
+          "current_key": "AIzaSyDmffi3BTTvdveTQXZD64DT8t43yhz4uB8"
         }
       ],
       "services": {
